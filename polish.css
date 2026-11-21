@@ -65,3 +65,9 @@ h1,h2,h3 { text-wrap:balance; }
   .enquiry-form-head h2 { font-size:3.1rem; }
 }
 @media(prefers-reduced-motion:reduce){.visual-card img { transition:none; }}
+
+/* Restrained image disclosure, without oversized copy or preview banners */
+.image-disclaimer {font-size:.72rem;line-height:1.45;color:#827d75;letter-spacing:0;margin:18px 0 0;}
+.compact-inspiration {padding-top:52px;padding-bottom:90px;}
+.compact-inspiration .image-disclaimer {margin:0 auto 24px;}
+@media(max-width:900px){.compact-inspiration {padding-top:40px;padding-bottom:65px;}}
