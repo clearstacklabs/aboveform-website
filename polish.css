@@ -71,3 +71,70 @@ h1,h2,h3 { text-wrap:balance; }
 .compact-inspiration {padding-top:52px;padding-bottom:90px;}
 .compact-inspiration .image-disclaimer {margin:0 auto 24px;}
 @media(max-width:900px){.compact-inspiration {padding-top:40px;padding-bottom:65px;}}
+
+
+/* AboveForm opening light: a soft rooflight glow, then a gentle handover to the hero.
+   The existing timing, logo, typography and image are untouched. */
+.show-intro .intro { isolation:isolate; overflow:hidden; }
+.show-intro .intro::before {
+  content:"";
+  position:absolute;
+  width:min(70vw,760px);
+  height:155vh;
+  top:-80vh;
+  left:54%;
+  transform:translateX(-50%) rotate(-27deg) scale(.85);
+  transform-origin:50% 100%;
+  background:linear-gradient(90deg,transparent 0%,rgba(236,214,170,.012) 26%,rgba(248,230,195,.12) 50%,rgba(236,214,170,.015) 74%,transparent 100%);
+  filter:blur(48px);
+  opacity:0;
+  animation:aboveformRooflight 2.65s cubic-bezier(.25,.6,.22,1) .38s both;
+  pointer-events:none;
+}
+.show-intro .intro::after {
+  content:"";
+  position:absolute;
+  width:min(76vw,780px);
+  height:min(60vw,580px);
+  top:25%;left:54%;
+  transform:translate(-50%,-50%) scale(.65);
+  background:radial-gradient(ellipse,rgba(247,224,186,.14) 0%,rgba(229,202,160,.07) 34%,transparent 70%);
+  filter:blur(28px);
+  opacity:0;
+  animation:aboveformLightBloom 2.75s ease .45s both;
+  pointer-events:none;
+}
+.show-intro .intro-inner {position:relative;z-index:1;}
+/* Introduce light onto the existing hero, without changing its photography or copy. */
+.show-intro .hero::after {
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 62% 20%,rgba(255,234,193,.25),rgba(255,222,174,.065) 36%,transparent 69%);
+  mix-blend-mode:screen;
+  opacity:0;
+  pointer-events:none;
+  animation:aboveformHeroDaylight 3.6s ease-out 2.1s both;
+}
+@keyframes aboveformRooflight {
+  0% {opacity:0;transform:translateX(-50%) rotate(-27deg) scale(.78)}
+  42% {opacity:.55}
+  73% {opacity:.9;transform:translateX(-48%) rotate(-24deg) scale(1)}
+  100% {opacity:0;transform:translateX(-46%) rotate(-22deg) scale(1.04)}
+}
+@keyframes aboveformLightBloom {
+  0%,12% {opacity:0;transform:translate(-50%,-50%) scale(.65)}
+  60% {opacity:.85;transform:translate(-50%,-50%) scale(1.08)}
+  100% {opacity:0;transform:translate(-50%,-50%) scale(1.18)}
+}
+@keyframes aboveformHeroDaylight {
+  0% {opacity:0}
+  24% {opacity:.58}
+  100% {opacity:0}
+}
+@media(max-width:650px) {
+ .show-intro .intro::before {width:112vw;left:57%;filter:blur(40px)}
+ .show-intro .intro::after {width:110vw;height:70vh}
+ .show-intro .hero::after {background:radial-gradient(ellipse at 65% 24%,rgba(255,234,193,.19),transparent 68%)}
+}
+@media(prefers-reduced-motion:reduce) {
+ .show-intro .intro::before,.show-intro .intro::after,.show-intro .hero::after {display:none;animation:none}
+}
