@@ -1,0 +1,67 @@
+/* AboveForm design system: a restrained editorial rhythm across every page. */
+:root { --dark:#242525; --ink:#252522; --cream:#f4efe6; --stone:#bdb1a0; --muted:#635f58; }
+body { font-size:16px; }
+p { text-wrap:pretty; }
+h1,h2,h3 { text-wrap:balance; }
+.overline { font-family:'DM Sans',Arial,sans-serif; font-size:.76rem; font-weight:600; letter-spacing:.21em; line-height:1.5; }
+.section-heading, .split-copy h2, .cta-panel h2, .footer-top h2, .inner-hero h1,
+.enquiry-aside h2, .enquiry-form h2, .confirmation-content h2 { letter-spacing:-.025em; }
+.brand span { letter-spacing:.16em; }
+.header { backdrop-filter:saturate(110%); }
+.header.scrolled,.header.inner { background:rgba(244,239,230,.97); }
+.desktop-nav a { font-size:.87rem; letter-spacing:.015em; }
+.desktop-nav a[aria-current="page"] { text-decoration:underline; text-underline-offset:9px; text-decoration-thickness:1px; }
+.header-cta, .button { font-size:.76rem; letter-spacing:.115em; font-weight:600; }
+.header-cta { min-height:48px; display:inline-flex; align-items:center; }
+.button { padding-inline:31px; }
+.button, .header-cta, .text-link { transition:background-color .28s ease,color .28s ease,border-color .28s ease,transform .28s ease,opacity .28s ease; }
+.button:focus-visible,.text-link:focus-visible,.header-cta:focus-visible,.desktop-nav a:focus-visible,
+.mobile-menu a:focus-visible,.menu-button:focus-visible,.footer a:focus-visible,.faq summary:focus-visible { outline:2px solid #827b6e; outline-offset:5px; }
+.hero-sub p, .lead, .split-copy p:not(.overline), .long-copy p, .confirmation-content>p:not(.overline):not(.note) { letter-spacing:-.012em; }
+.inner-hero.dark .lead { color:#d8d1c8; }
+.hero-content { max-width:1050px; }
+.hero h1 { letter-spacing:-.055em; }
+.hero .overline { display:inline-flex; align-items:center; gap:16px; }
+.hero .overline:before { content:''; width:34px; height:1px; background:currentColor; opacity:.75; }
+.section { scroll-margin-top:76px; }
+.intro-section .lead { max-width:750px; }
+.visual-card img { transition:transform 1.35s cubic-bezier(.19,1,.22,1),filter .6s; }
+.visual-card:hover img,.visual-card:focus-visible img { transform:scale(1.045); }
+.visual-card:focus-visible { outline:3px solid #8d7f6d; outline-offset:4px; }
+.visual-card .card-label { line-height:1.09; }
+.visual-card .card-label span:last-child { display:none; }
+.step p { font-size:1rem; }
+.text-link { font-size:.78rem; line-height:1.5; letter-spacing:.11em; }
+.text-link:hover { opacity:.6; }
+.faq summary { line-height:1.5; }
+.footer-links a:hover { color:white; text-decoration:underline; text-underline-offset:5px; }
+.note { font-size:.86rem; }
+.enquiry-form .note,.enquiry-footnote,.enquiry-fallback p,.enquiry-fallback a { font-size:.86rem; }
+.enquiry-time { font-size:.77rem; }
+.enquiry-benefits p { font-size:.94rem; }
+.confirmation-content .note { font-size:.86rem; }
+@media(max-width:900px){
+  .menu-button { display:block; }
+  .header-cta { display:none; }
+  .mobile-menu nav a { line-height:1.15; }
+}
+@media(max-width:650px){
+  .header { padding-inline:6%; }
+  .header .brand span { font-size:1.15rem; }
+  .header .brand svg { width:32px; }
+  .hero-content { padding-bottom:9vh; }
+  .hero h1 { font-size:clamp(4.25rem,16vw,6.3rem); line-height:.92; }
+  .hero-sub p { font-size:1rem; line-height:1.75; }
+  .section-heading { line-height:1.07; }
+  .inner-hero { padding-top:155px; min-height:440px; }
+  .inner-hero .lead { font-size:1.06rem; line-height:1.7; }
+  .split-copy { padding-block:70px; }
+  .split-copy p:not(.overline) { line-height:1.75; }
+  .long-copy p { font-size:1.06rem; line-height:1.83; }
+  .faq summary { font-size:1.05rem; }
+  .footer-top h2 { font-size:clamp(3.7rem,13.2vw,5.1rem); }
+  .button { min-height:58px; text-align:center; }
+  .enquiry-form { padding-top:40px; }
+  .enquiry-form-head h2 { font-size:3.1rem; }
+}
+@media(prefers-reduced-motion:reduce){.visual-card img { transition:none; }}

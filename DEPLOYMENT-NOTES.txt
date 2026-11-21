@@ -1,0 +1,7 @@
+AboveForm private staging source. Do not point aboveform.co.uk at this until production launch requirements are met.
+Static website, no build dependencies. Contains noindex,nofollow and robots.txt Disallow: /.
+GitHub Pages: deploy the contents of this ZIP at the root of a dedicated repository; do not upload the ZIP itself as the webpage.
+GitHub Pages repositories generally serve publicly, so do not upload if you require private staging of the draft legal notice.
+Existing Tally test embed remains: 2jKXbb; redirects require manual update later in Tally.
+Email forward hello@aboveform.co.uk requires setup.
+External Google Fonts, Unsplash and Tally require network access.

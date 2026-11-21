@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Private preview: remove this restriction only after privacy and launch approval.
